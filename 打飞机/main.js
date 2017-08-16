@@ -1,27 +1,3 @@
-var loadLevel = function(game, n) {
-    n = n - 1
-    var level = levels[n]
-    var blocks = []
-    for (var i = 0; i < level.length; i++) {
-        var p = level[i]
-        var b = Block(game, p)
-        blocks.push(b)
-    }
-    return blocks
-}
-
-var loadEditorLevel = function(game, n) {
-    n = n - 1
-    var level = editorLevels[n]
-    var blocks = []
-    for (var i = 0; i < level.length; i++) {
-        var p = level[i]
-        var b = Block(game, p)
-        blocks.push(b)
-    }
-    return blocks
-}
-
 var enableDebugMode = function(game, enable) {
     if(!enable) {
         return
@@ -34,7 +10,7 @@ var enableDebugMode = function(game, enable) {
             window.paused = !window.paused
         } else if ('1234567'.includes(k)) {
             // 为了 debug 临时加的载入关卡功能
-            blocks = loadLevel(game, Number(k))
+            // blocks = loadLevel(game, Number(k))
         }
     })
     // 控制速度
@@ -47,12 +23,16 @@ var enableDebugMode = function(game, enable) {
 
 var __main = function() {
     var images = {
-        ball: 'img/ball.png',
-        block: 'img/block.png',
-        paddle: 'img/paddle.png',
+        bullet: 'img/bullet.png',
+        player: 'img/player.png',
+        sky: 'img/sky.png',
+        enemy0: 'img/enemy0.png',
+        enemy1: 'img/enemy1.png',
+        fire: 'img/fire.png',
     }
     var game = GuaGame.instance(30, images, function(g){
-        var s = SceneTitle.new(g)
+        var s = Scene.new(g)
+        // var s = SceneTitle.new(g)
         g.runWithScene(s)
     })
 
