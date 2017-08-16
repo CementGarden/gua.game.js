@@ -29,14 +29,6 @@ var __main = function() {
         enemy0: 'img/enemy0.png',
         enemy1: 'img/enemy1.png',
         fire: 'img/fire.png',
-        bird1: 'img/bird/bird1.png',
-        bird2: 'img/bird/bird2.png',
-        bird3: 'img/bird/bird3.png',
-        bird4: 'img/bird/bird4.png',
-        bird2_1: 'img/bird2/bird1.png',
-        bird2_2: 'img/bird2/bird2.png',
-        bird2_3: 'img/bird2/bird3.png',
-        bird2_4: 'img/bird2/bird4.png',
     }
     var game = GuaGame.instance(30, images, function(g){
         var s = Scene.new(g)

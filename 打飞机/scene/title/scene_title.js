@@ -24,9 +24,25 @@ class SceneTitle extends GuaScene {
         //     game.replaceScene(s)
         // })
 
-        var ps = GuaParticleSystem.new(game)
+        var w = GuaAnimation.new(game)
+        w.x = 100
+        w.y = 200
+        this.w = w
+        this.addElement(w)
 
-        this.addElement(ps)
+        this.setupInputs()
+        // var ps = GuaParticleSystem.new(game)
+        //
+        // this.addElement(ps)
+    }
+    setupInputs() {
+        var self = this
+        self.game.registerAction('a', function(keyStatus) {
+            self.w.move(-2, keyStatus)
+        })
+        self.game.registerAction('d', function(keyStatus) {
+            self.w.move(2, keyStatus)
+        })
     }
     draw() {
         super.draw()
