@@ -29,10 +29,19 @@ var __main = function() {
         enemy0: 'img/enemy0.png',
         enemy1: 'img/enemy1.png',
         fire: 'img/fire.png',
+        b1: 'img/bird/bird1.png',
+        b2: 'img/bird/bird2.png',
+        b3: 'img/bird/bird3.png',
+        b4: 'img/bird/bird4.png',
+        ground: 'img/base.png',
+        pipe: 'img/pipe.png',
+        bg: 'img/background.png',
+        over: 'img/gameover.png',
+        title: 'img/message.png',
     }
     var game = GuaGame.instance(30, images, function(g){
-        var s = Scene.new(g)
-        // var s = SceneTitle.new(g)
+        // var s = Scene.new(g)
+        var s = SceneTitle.new(g)
         g.runWithScene(s)
     })
 
